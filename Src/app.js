@@ -14,6 +14,7 @@ const app = express();
 app.use(
   cors({
     origin: process.env.CLIENT_ORIGIN,
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -32,4 +33,4 @@ app.use(passport.session());
 const routes = require("./Routes/routes");
 app.use("/", routes);
 
-module.exports = app;
+export default app;
