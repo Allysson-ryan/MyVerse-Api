@@ -1,13 +1,13 @@
 const express = require("express");
 const passport = require("passport");
 const router = express.Router();
-const reviewController = require("../Controllers/reviewController");
-const wishlistController = require("../Controllers/wishlistController");
-const categoryController = require("../Controllers/categoryController");
+const reviewController = require("./Controllers/reviewController");
+const wishlistController = require("./Controllers/wishlistController");
+const categoryController = require("./Controllers/categoryController");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const User = require("../Model/UserModel");
-const authMiddleware = require("../middleware/authMiddleware");
+const User = require("./Model/UserModel");
+const authMiddleware = require("./middleware/authMiddleware");
 
 router.get("/reviews", authMiddleware, reviewController.getAllReviews);
 router.get(
@@ -81,13 +81,12 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ error: "Credenciais inválidas." });
 
     const token = jwt.sign(
-  { id: user._id, nome: user.name },
-  process.env.JWT_SECRET,
-  { expiresIn: "1d" }
-);
+      { id: user._id, nome: user.name },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
 
-res.json({ id: user._id, nome: user.name, token });
-
+    res.json({ id: user._id, nome: user.name, token });
   } catch (err) {
     res.status(500).json({ error: "Erro interno do servidor." });
   }

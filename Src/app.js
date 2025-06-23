@@ -33,7 +33,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const routes = require("./Routes/routes");
+const routes = require("./routes");
 app.use("/", routes);
 
-export default app;
+module.exports = app;
