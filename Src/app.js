@@ -11,13 +11,16 @@ require("./config/passport");
 
 const app = express();
 
+const allowedOrigins = process.env.CORS_ORIGIN?.split(",") || [];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN,
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(
