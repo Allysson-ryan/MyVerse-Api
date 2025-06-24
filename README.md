@@ -1,6 +1,6 @@
 # 📦 MyVerse API – Backend
 
-API RESTful para o **MyVerse**, uma aplicação pessoal para gerenciamento de resenhas e lista de desejos de livros, filmes e séries.  
+API RESTful para o [MyVerse Interface](https://github.com/Allysson-ryan/MyVerse-Interface), uma aplicação pessoal para gerenciamento de resenhas e lista de desejos de livros, filmes e séries.  
 Permite aos usuários cadastrar, editar, visualizar e remover projetos em consumo ou desejados, com autenticação via Google.
 
 ---
