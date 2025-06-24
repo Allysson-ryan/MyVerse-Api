@@ -42,7 +42,11 @@ router.delete(
   categoryController.deleteCategory
 );
 
-// Inicia o login com Google
+//teste cors
+router.get("/ping", (req, res) => {
+  res.json({ message: "API funcionando com CORS ✅" });
+});
+
 router.get(
   "/auth/google",
   passport.authenticate("google", {
@@ -51,7 +55,6 @@ router.get(
   })
 );
 
-// Callback do Google
 router.get(
   "/auth/google/callback",
   passport.authenticate("google", {
