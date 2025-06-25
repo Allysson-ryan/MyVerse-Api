@@ -6,8 +6,14 @@ exports.getCategories = async (req, res) => {
 };
 
 exports.createCategory = async (req, res) => {
-  const created = await categoryService.createCategory(req.body, req.user.id);
-  res.status(201).json(created);
+  try {
+    const created = await categoryService.createCategory(req.body, req.user.id);
+    res.status(201).json(created);
+  } catch (error) {
+    res.status(error.status || 500).json({
+      message: error.message || "Erro ao criar a categoria",
+    });
+  }
 };
 
 exports.updateCategory = async (req, res) => {
