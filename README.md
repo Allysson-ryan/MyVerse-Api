@@ -162,13 +162,12 @@ A aplicação estará disponível em: `http://localhost:3333`
 
 ### ✅ Validação
 
-## 📫 Screenshot do fluxograma da Api
-
-![screenshot](/src/assets/fluxograma-Myverse.png)
-
-
 | Método | Rota                      | Descrição                  |
 | ------ | ------------------------- | -------------------------- |
 | GET    | `/validate-name?name=xyz` | Verifica se nome já existe |
 
 ---
+
+## 📫 Screenshot do fluxograma da Api
+
+![screenshot](/Src/assets/fluxograma-Myverse.png)
